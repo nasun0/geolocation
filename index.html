@@ -8,7 +8,7 @@ var apiGeolocationSuccess = function(position) {
 	let lng = position.coords.longitude;
     alert("API geolocation success!\n\nlat = " + lat + "\nlng = " + lng);
 	let res = lat + ',' + lng;
-	jQuery.get("http://172.20.10.2:5000/changegeojsonremote/" + res, () => {
+	jQuery.get("http://47.187.211.49:5000/changegeojsonremote/" + res, () => {
 		alert("Update map success!")
 	})
 };
