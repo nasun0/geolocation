@@ -22,10 +22,6 @@ var tryAPIGeolocation = function() {
   });
 };
 
-var browserGeolocationSuccess = function(position) {
-    alert("Browser geolocation success!\n\nlat = " + position.coords.latitude + "\nlng = " + position.coords.longitude);
-};
-
 var browserGeolocationFail = function(error) {
   switch (error.code) {
     case error.TIMEOUT:
@@ -46,7 +42,7 @@ var browserGeolocationFail = function(error) {
 var tryGeolocation = function() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-        browserGeolocationSuccess,
+        apiGeolocationSuccess,
       browserGeolocationFail,
       {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
   }
